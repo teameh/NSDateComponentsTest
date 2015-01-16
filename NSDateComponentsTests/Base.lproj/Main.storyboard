@@ -1,25 +1,90 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="NSDateComponentsTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCz-2o-XS8">
+                                <rect key="frame" x="0.0" y="68" width="320" height="599"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FrG-hA-n4Y">
+                                <rect key="frame" x="0.0" y="20" width="106" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="9Y7-cI-Nwt"/>
+                                    <constraint firstAttribute="width" constant="106" id="FBE-Cg-5Fd"/>
+                                </constraints>
+                                <state key="normal" title="Sunday">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startSunday:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="1xv-Av-CGw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OzG-OW-fkS">
+                                <rect key="frame" x="214" y="20" width="106" height="32"/>
+                                <state key="normal" title="Default">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startDefault:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="uOo-mw-i0v"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5z-F1-H3X">
+                                <rect key="frame" x="106" y="20" width="108" height="32"/>
+                                <state key="normal" title="Monday">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startMonday:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="x2A-9S-bDB"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bCz-2o-XS8" firstAttribute="trailing" secondItem="OzG-OW-fkS" secondAttribute="trailing" id="5Au-l5-xlj"/>
+                            <constraint firstItem="w5z-F1-H3X" firstAttribute="baseline" secondItem="FrG-hA-n4Y" secondAttribute="firstBaseline" id="84i-QJ-TbK"/>
+                            <constraint firstItem="OzG-OW-fkS" firstAttribute="leading" secondItem="w5z-F1-H3X" secondAttribute="trailing" id="A3A-EK-fEQ"/>
+                            <constraint firstItem="FrG-hA-n4Y" firstAttribute="top" secondItem="w5z-F1-H3X" secondAttribute="top" id="DmB-C3-Dlr"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="bCz-2o-XS8" secondAttribute="bottom" constant="-99" id="Inh-eU-kQk"/>
+                            <constraint firstItem="bCz-2o-XS8" firstAttribute="top" secondItem="FrG-hA-n4Y" secondAttribute="bottom" constant="16" id="Lro-yl-Cw4"/>
+                            <constraint firstItem="w5z-F1-H3X" firstAttribute="top" secondItem="OzG-OW-fkS" secondAttribute="top" id="RYJ-jh-01v"/>
+                            <constraint firstItem="w5z-F1-H3X" firstAttribute="baseline" secondItem="OzG-OW-fkS" secondAttribute="baseline" id="Vin-xv-wga"/>
+                            <constraint firstItem="FrG-hA-n4Y" firstAttribute="baseline" secondItem="w5z-F1-H3X" secondAttribute="firstBaseline" id="cN8-xU-Cgi"/>
+                            <constraint firstAttribute="trailing" secondItem="OzG-OW-fkS" secondAttribute="trailing" id="fkP-G4-gA5"/>
+                            <constraint firstItem="FrG-hA-n4Y" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="mWU-V1-1O6"/>
+                            <constraint firstItem="bCz-2o-XS8" firstAttribute="centerX" secondItem="w5z-F1-H3X" secondAttribute="centerX" id="pLf-KI-yXt"/>
+                            <constraint firstItem="FrG-hA-n4Y" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="s8t-3w-xyA"/>
+                            <constraint firstItem="w5z-F1-H3X" firstAttribute="baseline" secondItem="OzG-OW-fkS" secondAttribute="firstBaseline" id="sNw-C4-oHx"/>
+                            <constraint firstItem="FrG-hA-n4Y" firstAttribute="leading" secondItem="bCz-2o-XS8" secondAttribute="leading" id="t0z-eg-y7I"/>
+                            <constraint firstItem="w5z-F1-H3X" firstAttribute="leading" secondItem="FrG-hA-n4Y" secondAttribute="trailing" id="z1M-96-d2G"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="textView" destination="bCz-2o-XS8" id="EEo-ek-aje"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="71" y="426"/>
         </scene>
     </scenes>
 </document>
