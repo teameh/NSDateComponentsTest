@@ -44,11 +44,11 @@ class ViewController: UIViewController {
 			var _components = calendar.components(units, fromDate: _date)
 
 			// retrieve characteristics
-			let dayWeekOfMonth = _components.weekOfMonth
-			let dayOfWeek = _components.weekday
-			let month = _components.month
-
-			output += "\(formatter.stringFromDate(_date)) - is day \(dayOfWeek) of week \(dayWeekOfMonth) of month \(month) \n";
+			var weekOfMonth = _components.weekOfMonth
+			var dayOfWeek = _components.weekday
+			var month = _components.month
+            
+			output += "+ \(formatter.stringFromDate(_date)) - is day \(dayOfWeek) of week \(weekOfMonth) of month \(month) \n";
 		}
 
 		textView.text = output + "\n\n" + textView.text
